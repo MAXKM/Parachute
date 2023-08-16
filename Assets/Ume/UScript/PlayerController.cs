@@ -42,4 +42,12 @@ public class PlayerController : MonoBehaviour
         worldAngle.x += BR;
         myTransform.eulerAngles = worldAngle; // ‰ñ“]Šp“x‚ğİ’è
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            BR = 0;
+        }
+    }
 }
