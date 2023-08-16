@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerParticle : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public GameObject smoke;
+    public GameObject MR;
     void Start()
     {
         
@@ -14,5 +17,13 @@ public class PlayerParticle : MonoBehaviour
     void Update()
     {
         
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        Vector3 posi = this.transform.position;
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            Instantiate(smoke, posi, Quaternion.Euler(0, 180, 0));
+        }
     }
 }
