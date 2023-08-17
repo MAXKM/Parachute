@@ -8,7 +8,9 @@ using UnityEngine.SceneManagement;
 public class ScoreMane : MonoBehaviour
 {
     [SerializeField]TextMeshProUGUI scoreObj;
+    [SerializeField] TextMeshProUGUI OverObj;
     public static int scoreNum = 0;
+    //private bool a;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,24 @@ public class ScoreMane : MonoBehaviour
     {
         // テキストの表示を入れ替える
         scoreObj.text ="Score:"+ scoreNum;
+    }
+
+    public void MaruBatu(bool hantei)
+    {
+        if (hantei == true)
+        {
+            scoreNum = scoreNum + 100;
+        }
+        else
+        {
+            scoreNum = scoreNum - 100;
+        }
+    }
+    private void SeceneMove()
+    {
+        PlayerPrefs.SetInt("fscore", scoreNum);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("sResultScene");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,10 +59,18 @@ public class ScoreMane : MonoBehaviour
 
         if (other.CompareTag("GOver"))
         {
+            //a = false;
             Debug.Log("no");
-            PlayerPrefs.SetInt("fscore", scoreNum);
-            PlayerPrefs.Save();
-            SceneManager.LoadScene("sResultScene");
+            OverObj.text = "GameOver";
+            Invoke(nameof(SeceneMove), 3.5f);
         }
+
+        //if (other.CompareTag("Goal"))
+        //{
+        //    Debug.Log("last");
+        //    PlayerPrefs.SetInt("fscore", scoreNum);
+        //    PlayerPrefs.Save();
+        //    SceneManager.LoadScene("sResultScene");
+        //}
     }
 }
