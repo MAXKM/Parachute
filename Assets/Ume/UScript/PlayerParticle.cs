@@ -49,8 +49,9 @@ public class PlayerParticle : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         rb.constraints = RigidbodyConstraints.None;
-        Vector3 force = new Vector3(0.0f, 0.0f, 100.0f);    // —Í‚ğİ’è
-        rb.AddForce(force);  // —Í‚ğ‰Á‚¦‚é
+        staging = false;
+        Vector3 force = new Vector3(0.0f, 0.0f, 50.0f);// —Í‚ğİ’è
+        rb.AddForce(force, ForceMode.Impulse);// —Í‚ğ‰Á‚¦‚é
     }
 
 }
