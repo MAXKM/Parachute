@@ -22,7 +22,7 @@ public class GameStart : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         rb = GetComponent<Rigidbody>();
-        Vector3 force = new Vector3(0.0f, 100.0f, 0.0f);// —Í‚ğİ’è
+        Vector3 force = new Vector3(0.0f, 50.0f, 0.0f);// —Í‚ğİ’è
         rb.AddForce(force, ForceMode.Impulse);// —Í‚ğ‰Á‚¦‚é
     }
 }

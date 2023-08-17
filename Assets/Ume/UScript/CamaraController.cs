@@ -15,6 +15,7 @@ public class CamaraController : MonoBehaviour
     public PlayerController playerController;
     bool onece;
     bool finish;
+    float z = 35.0f;
     void Start()
     {
         offset = transform.position - player.transform.position;
@@ -36,23 +37,26 @@ public class CamaraController : MonoBehaviour
             if (PlayerTFP.x <= 6.25f)
             {
                 transform.position = new Vector3(PlayerTFP.x - 2.45f, PlayerTFP.y + 0.6f, PlayerTFP.z - 3.0f);
-                transform.eulerAngles = new Vector3(0, 35, 0);
+                transform.eulerAngles = new Vector3(0, z, 0);
             }
             else
             {
                 transform.position = new Vector3(PlayerTFP.x + 2.45f, PlayerTFP.y + 0.6f, PlayerTFP.z - 3.0f);
-                transform.eulerAngles = new Vector3(0, -35, 0);
+                transform.eulerAngles = new Vector3(0, -z, 0);
             }
             onece = false;
             StartCoroutine("FinishFiring");
             offset = transform.position - player.transform.position;
         }
-        if (finish == true && PlayerTFP.z <= 48.0f)
+        if (finish == true && this.transform.position.z <= 48.0f)
         {
             transform.position = player.transform.position + offset;
         }
-        TTFP = this.transform.position;
-        TTFA = this.transform.eulerAngles;
+        if (finish == true && this.transform.position.z >= 48.0f)
+        {
+            transform.position = new Vector3(PlayerTFP.x, transform.position.y, transform.position.z);
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
 
         //transform.position = new Vector3(5, 5, 5);
         //transform.eulerAngles = new Vector3(45, 0, 0);
