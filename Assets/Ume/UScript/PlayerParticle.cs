@@ -12,9 +12,11 @@ public class PlayerParticle : MonoBehaviour
     public GameObject MR2;
     public float BR;
     bool staging;
+    bool onece;
     void Start()
     {
         staging = false;
+        onece = true;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -30,17 +32,25 @@ public class PlayerParticle : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         Vector3 posi = this.transform.position;
-        if (collision.gameObject.CompareTag("Floor"))
+        if (collision.gameObject.CompareTag("Floor") && onece == true)
         {
             Instantiate(smoke, new Vector3(posi.x, posi.y - 0.35f, posi.z - 0.50f), Quaternion.Euler(0, 180, 0));
             Instantiate(MR, new Vector3(posi.x, posi.y + 0.25f, posi.z + 0.15f), Quaternion.Euler(0, 90, 0));
             Instantiate(MR2, new Vector3(posi.x, posi.y + 0.25f, posi.z), Quaternion.Euler(0, 90, 0));
+            rb.constraints = RigidbodyConstraints.FreezePosition;
+            StartCoroutine("Firing");
+            posi.y = -1.625f;
+            transform.position = posi;
         }
-        rb.constraints = RigidbodyConstraints.FreezePosition;
-        posi.y = -1.63f;
-        transform.position = posi;
         staging = true;
+        onece = false;
     }
-
+    IEnumerator Firing()
+    {
+        yield return new WaitForSeconds(3);
+        rb.constraints = RigidbodyConstraints.None;
+        Vector3 force = new Vector3(0.0f, 0.0f, 100.0f);    // óÕÇê›íË
+        rb.AddForce(force);  // óÕÇâ¡Ç¶ÇÈ
+    }
 
 }
