@@ -9,6 +9,7 @@ public class PlayerParticle : MonoBehaviour
     public Rigidbody rb;
     public GameObject smoke;
     public GameObject MR;
+    public GameObject MR2;
     public float BR;
     bool staging;
     void Start()
@@ -31,11 +32,15 @@ public class PlayerParticle : MonoBehaviour
         Vector3 posi = this.transform.position;
         if (collision.gameObject.CompareTag("Floor"))
         {
-            Instantiate(smoke, posi, Quaternion.Euler(0, 180, 0));
+            Instantiate(smoke, new Vector3(posi.x, posi.y - 0.35f, posi.z - 0.50f), Quaternion.Euler(0, 180, 0));
+            Instantiate(MR, new Vector3(posi.x, posi.y + 0.25f, posi.z + 0.15f), Quaternion.Euler(0, 90, 0));
+            Instantiate(MR2, new Vector3(posi.x, posi.y + 0.25f, posi.z), Quaternion.Euler(0, 90, 0));
         }
         rb.constraints = RigidbodyConstraints.FreezePosition;
-        posi.y = -1.55f;
+        posi.y = -1.63f;
         transform.position = posi;
         staging = true;
     }
+
+
 }
