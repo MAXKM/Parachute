@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Sasaki/sTitleScene.unity
+    guid: a2e750ffcabcf14499645430ceacd84d
+  - enabled: 1
+    path: Assets/Sasaki/Sasaki01.unity
+    guid: 2cf51f75a4e06f546a812a1f1bf9a3e5
+  - enabled: 1
+    path: Assets/Sasaki/sResultScene.unity
+    guid: 87d926702521215479b3f282d2473b59
   m_configObjects: {}
