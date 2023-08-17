@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1980487295}
+  playerController: {fileID: 1980487301}
 --- !u!1 &736606508
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RLUD: 0.05
   BR: 1
+  play: 0
 --- !u!114 &1980487302
 MonoBehaviour:
   m_ObjectHideFlags: 0
