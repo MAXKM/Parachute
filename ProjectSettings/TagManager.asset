@@ -7,6 +7,9 @@ TagManager:
   - Floor
   - FxTemporaire
   - Judgement
+  - QS
+  - CA
+  - IA
   layers:
   - Default
   - TransparentFX
