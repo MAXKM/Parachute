@@ -42,7 +42,7 @@ public class PlayerParticle : MonoBehaviour
             p3 = Instantiate(MR2, new Vector3(posi.x, posi.y + 0.25f, posi.z), Quaternion.Euler(0, 90, 0));
             rb.constraints = RigidbodyConstraints.FreezePosition;
             StartCoroutine("Firing");
-            posi.y = -1.625f;
+            posi.y = 0.5f;
             transform.position = posi;
         }
         staging = true;
