@@ -5,12 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Rigidbody rb;
     public float RLUD;
     public float BR;
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -38,9 +37,7 @@ public class PlayerController : MonoBehaviour
         }
         //ƒ{[ƒ‹‚ğ‰ñ“]‚³‚¹‚é
         Transform myTransform = this.transform;
-        Vector3 worldAngle = myTransform.eulerAngles;
-        worldAngle.x += BR;
-        myTransform.eulerAngles = worldAngle; // ‰ñ“]Šp“x‚ğİ’è
+        myTransform.Rotate(BR, 0, 0, Space.World);
     }
 
     void OnCollisionEnter(Collision collision)
