@@ -8,6 +8,7 @@ public class QuizScript : MonoBehaviour
 {
     public string[,] textArray;
     public Text quizText;
+    public Text quizTitle;
     public int rand;
     public GameObject player;
     void Start()
@@ -32,6 +33,7 @@ public class QuizScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             quizText.text = textArray[rand, 0];
+            quizTitle.text = "–â‘è";
         }
     }
 }

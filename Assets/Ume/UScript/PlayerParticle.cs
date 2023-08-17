@@ -37,13 +37,13 @@ public class PlayerParticle : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor") && onece == true)
         {
             Vector3 posi = this.transform.position;
+            posi.y = 0.5f;
+            transform.position = posi;
             p1 = Instantiate(smoke, new Vector3(posi.x, posi.y - 0.35f, posi.z - 0.50f), Quaternion.Euler(0, 180, 0));
             p2 = Instantiate(MR, new Vector3(posi.x, posi.y + 0.25f, posi.z + 0.15f), Quaternion.Euler(0, 90, 0));
             p3 = Instantiate(MR2, new Vector3(posi.x, posi.y + 0.25f, posi.z), Quaternion.Euler(0, 90, 0));
             rb.constraints = RigidbodyConstraints.FreezePosition;
             StartCoroutine("Firing");
-            posi.y = 0.5f;
-            transform.position = posi;
             staging = true;
             onece = false;
         }
