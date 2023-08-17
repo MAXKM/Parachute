@@ -5,7 +5,7 @@ using TMPro;
 
 public class ResultMane : MonoBehaviour
 {
-    [SerializeField] ScoreMane scoremane;
+    //[SerializeField] ScoreMane scoremane;
     [SerializeField] TextMeshProUGUI HighScoreObj;
     public int HighScore = 0;
     public int Fscore = 0;
