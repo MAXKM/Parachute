@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     public float RLUD;
     public float BR;
-    bool play;
+    public bool play;
     void Start()
     {
         play = true;

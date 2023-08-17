@@ -7,6 +7,7 @@ public class CamaraController : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
     private Vector3 offset;
+    public PlayerController playerController;
     void Start()
     {
         offset = transform.position - player.transform.position;
@@ -16,5 +17,10 @@ public class CamaraController : MonoBehaviour
     void Update()
     {
         transform.position = player.transform.position + offset;
+
+        if(playerController.play == false)
+        {
+            GetComponent<CamaraController>().enabled = false;
+        }
     }
 }
