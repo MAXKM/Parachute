@@ -48,6 +48,7 @@ public class PlayerParticle : MonoBehaviour
             onece = false;
         }
     }
+    
     IEnumerator Firing()
     {
         yield return new WaitForSeconds(3);
