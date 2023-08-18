@@ -24,7 +24,7 @@ public class ScoreMane : MonoBehaviour
     {
         Vector3 posi = this.transform.position;
         // テキストの表示を入れ替える
-        scoreObj.text = "Score:" + scoreNum + "\nHeight" + posi.y;
+        scoreObj.text = "Score:" + scoreNum + "\nHeight" + posi.y.ToString("F1");
     }
 
     public void MaruBatu(bool hantei)
