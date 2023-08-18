@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sasaki/sResultScene.unity
     guid: 87d926702521215479b3f282d2473b59
+  - enabled: 1
+    path: Assets/Manato/OP/sTitleScene2.unity
+    guid: 5962b7898f5cd0441b35be830037d522
   m_configObjects: {}
