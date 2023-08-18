@@ -49,7 +49,7 @@ public class ScoreMane : MonoBehaviour
     {
         PlayerPrefs.SetInt("fscore", scoreNum);
         PlayerPrefs.Save();
-        SceneManager.LoadScene("sResultScene");
+        SceneManager.LoadScene("sResultScene2");
     }
 
     private void OnTriggerEnter(Collider other)
