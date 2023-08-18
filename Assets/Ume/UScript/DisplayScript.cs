@@ -18,12 +18,12 @@ public class DisplayScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(this.transform.position.y <= 200 && Dquiz == false)
+        if(this.transform.position.y <= 625 && Dquiz == false)
         {
             quiz.SetActive(true);
             Dquiz = true;
         }
-        if (this.transform.position.y <= 125 && DquizTT == true)
+        if (this.transform.position.y <= 400 && DquizTT == true)
         {
             quizTitle.SetActive(false);
             quizText.SetActive(false);
