@@ -11,6 +11,8 @@ public class QuizScript : MonoBehaviour
     public Text quizTitle;
     public int rand;
     public GameObject player;
+    public AudioClip shoot;
+    AudioSource audioSource;
     void Start()
     {
         textArray = new string[,]
@@ -22,6 +24,7 @@ public class QuizScript : MonoBehaviour
         {"サッカーの主な4つのポジションの\n一つで後方で守備を行う選手のことを\nミッドフィルダーという","B"}
         };//Aが正解Bが不正解
         rand = Random.Range(0, 4);
+        audioSource = GetComponent<AudioSource>();
 
     }
     void Update()
@@ -34,6 +37,7 @@ public class QuizScript : MonoBehaviour
         {
             quizText.text = textArray[rand, 0];
             quizTitle.text = "問題";
+            audioSource.PlayOneShot(shoot);
         }
     }
 }

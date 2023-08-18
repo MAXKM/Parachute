@@ -7,9 +7,12 @@ public class CorrectAnswer : MonoBehaviour
     public QuizScript quizScript;
     public ScoreMane scoreMane;
     public bool hantei;
+    public AudioClip shoot;
+    AudioSource audioSource;
     void Start()
     {
         hantei = false;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,9 +24,9 @@ public class CorrectAnswer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && quizScript.textArray[quizScript.rand,1] == "A")
         {
-            Debug.Log("ê≥â");
             hantei = true;
             scoreMane.MaruBatu(hantei);
+            audioSource.PlayOneShot(shoot);
         }
     }
 }
