@@ -75,13 +75,10 @@ public class ScoreMane : MonoBehaviour
             Invoke(nameof(SeceneMove), 2.0f);
         }
 
-        //if (other.CompareTag("Goal"))
-        //{
-        //    Debug.Log("last");
-        //    OverObj.text = "GameClear!";
-        //    PlayerPrefs.SetInt("fscore", scoreNum);
-        //    PlayerPrefs.Save();
-        //    SceneManager.LoadScene("sResultScene");
-        //}
+        if (other.CompareTag("Goal"))
+        {
+            Debug.Log("last");
+            Invoke(nameof(SeceneMove), 2.0f);
+        }
     }
 }
