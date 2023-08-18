@@ -10,7 +10,11 @@ public class ScoreMane : MonoBehaviour
     [SerializeField]TextMeshProUGUI scoreObj;
     [SerializeField] TextMeshProUGUI OverObj;
     public static int scoreNum = 0;
-    
+    public GameObject boom;
+    public GameObject Player;
+    GameObject b1;
+    public Rigidbody rb;
+
     //public GameObject fade;//インスペクタからPrefab化したCanvasを入れる
     //private bool a;
 
@@ -18,13 +22,14 @@ public class ScoreMane : MonoBehaviour
     void Start()
     {
         scoreNum = 0;
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
         Vector3 posi = this.transform.position;
         // テキストの表示を入れ替える
-        scoreObj.text = "Score:" + scoreNum + "\nHeight" + posi.y.ToString("F1");
+        scoreObj.text = "Score:" + scoreNum + "\nHeight:" + posi.y.ToString("F0");
     }
 
     public void MaruBatu(bool hantei)
@@ -64,6 +69,9 @@ public class ScoreMane : MonoBehaviour
             //a = false;
             Debug.Log("no");
             OverObj.text = "GameOver";
+            b1 = Instantiate(boom, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z), Quaternion.Euler(0, 0, 0));
+            Player.SetActive(false);
+            rb.constraints = RigidbodyConstraints.FreezePosition;
             Invoke(nameof(SeceneMove), 2.0f);
         }
 
