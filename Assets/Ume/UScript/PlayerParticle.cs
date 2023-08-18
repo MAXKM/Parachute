@@ -16,12 +16,15 @@ public class PlayerParticle : MonoBehaviour
     GameObject p1;
     GameObject p2;
     GameObject p3;
+    public AudioClip shoot;
+    AudioSource audioSource;
     void Start()
     {
         Application.targetFrameRate = 60;
         staging = false;
         onece = true;
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -44,6 +47,7 @@ public class PlayerParticle : MonoBehaviour
             p2 = Instantiate(MR, new Vector3(posi.x, posi.y + 0.25f, posi.z + 0.15f), Quaternion.Euler(0, 90, 0));
             p3 = Instantiate(MR2, new Vector3(posi.x, posi.y + 0.25f, posi.z), Quaternion.Euler(0, 90, 0));
             rb.constraints = RigidbodyConstraints.FreezePosition;
+            audioSource.PlayOneShot(shoot);
             StartCoroutine("Firing");
             staging = true;
             onece = false;
@@ -52,7 +56,7 @@ public class PlayerParticle : MonoBehaviour
     
     IEnumerator Firing()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2.25f);
         rb.constraints = RigidbodyConstraints.None;
         staging = false;
         Vector3 force = new Vector3(0.0f, 0.0f, 50.0f);// óÕÇê›íË
