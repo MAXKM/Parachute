@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8793632518102112040}
   - component: {fileID: 5595328613223487629}
   - component: {fileID: 7656804308902685767}
+  - component: {fileID: 7273458942327885371}
   m_Layer: 0
   m_Name: Pre SoccerBall
   m_TagString: Untagged
@@ -84,3 +85,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &7273458942327885371
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8161246568846757266}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.17602737
+  m_Center: {x: 0, y: 0.16793148, z: 0}
