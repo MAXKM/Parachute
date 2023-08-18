@@ -9,6 +9,9 @@ public class GimmickOn : MonoBehaviour
     public GameObject Gk;
     public PlayerController playerController;
     public CamaraController camaraController;
+    public Display display;
+    public ChangeGravity changeGravity;
+    public PlayerParticle particle;
     void Start()
     {
         on = false;

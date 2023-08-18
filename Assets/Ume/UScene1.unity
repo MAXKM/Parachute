@@ -303,6 +303,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pre taiho
       objectReference: {fileID: 0}
+    - target: {fileID: 3348220688517740764, guid: e82e509f0620afe4192dfbf26b18797f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e82e509f0620afe4192dfbf26b18797f, type: 3}
 --- !u!1 &220905220
