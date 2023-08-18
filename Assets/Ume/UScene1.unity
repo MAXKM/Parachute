@@ -2624,6 +2624,9 @@ MonoBehaviour:
   rb: {fileID: 0}
   playerController: {fileID: 1047565337}
   exciting: {fileID: 8300000, guid: 30f463d70cebfd44e827fab1d1426956, type: 3}
+  GRing: {fileID: 8300000, guid: 07126d73ce4326e43a35818735d545f3, type: 3}
+  BRing: {fileID: 8300000, guid: 2cafd9242d9367b4881775fae9fcda01, type: 3}
+  NRing: {fileID: 8300000, guid: b76720483b955754d9fe5b040a54ef9f, type: 3}
 --- !u!114 &1047565334
 MonoBehaviour:
   m_ObjectHideFlags: 0
