@@ -23,6 +23,8 @@ public class GimmickOn : MonoBehaviour
         if (this.transform.position.y >= 1000 && on == false)
         {
             Gk.SetActive(true);
+
+
         }
     }
 }
