@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Manato/OP/Explanation.unity
     guid: c83e681689c6eea4689c74c93b73a189
+  - enabled: 1
+    path: Assets/Ume/UScene1.unity
+    guid: 19fa9d346a7787f4e9b084efb2304c40
   m_configObjects: {}
