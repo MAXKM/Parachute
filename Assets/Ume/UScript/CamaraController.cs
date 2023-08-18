@@ -27,13 +27,17 @@ public class CamaraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerController.play == false && this.transform.position.y > 1.1)
+        {
+
+        }
         PlayerTFP = player.transform.position;
         PlayerTFA = player.transform.eulerAngles;
         if(playerController.play == true)
         {
             transform.position = player.transform.position + offset;
         }
-        if(playerController.play == false && onece == true)
+        if(playerController.play == false && onece == true && this.transform.position.y <= 8.8f)
         {
             if (PlayerTFP.x <= 6.25f)
             {

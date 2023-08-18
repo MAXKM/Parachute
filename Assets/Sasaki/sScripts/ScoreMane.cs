@@ -8,12 +8,12 @@ using UnityEngine.SceneManagement;
 public class ScoreMane : MonoBehaviour
 {
     [SerializeField]TextMeshProUGUI scoreObj;
-    [SerializeField] TextMeshProUGUI OverObj;
     public static int scoreNum = 0;
     public GameObject boom;
     public GameObject Player;
     GameObject b1;
     public Rigidbody rb;
+    public PlayerController playerController;
 
     //public GameObject fade;//インスペクタからPrefab化したCanvasを入れる
     //private bool a;
@@ -68,10 +68,10 @@ public class ScoreMane : MonoBehaviour
         {
             //a = false;
             Debug.Log("no");
-            OverObj.text = "GameOver";
-            b1 = Instantiate(boom, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z), Quaternion.Euler(0, 0, 0));
             Player.SetActive(false);
+            playerController.play = false;
             rb.constraints = RigidbodyConstraints.FreezePosition;
+            b1 = Instantiate(boom, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z), Quaternion.Euler(0, 0, 0));
             Invoke(nameof(SeceneMove), 2.0f);
         }
 
