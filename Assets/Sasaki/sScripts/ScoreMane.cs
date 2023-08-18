@@ -14,7 +14,8 @@ public class ScoreMane : MonoBehaviour
     GameObject b1;
     public Rigidbody rb;
     public PlayerController playerController;
-
+    public AudioClip exciting;
+    AudioSource audioSource;
     //public GameObject fade;//インスペクタからPrefab化したCanvasを入れる
     //private bool a;
 
@@ -23,6 +24,7 @@ public class ScoreMane : MonoBehaviour
     {
         scoreNum = 0;
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -78,6 +80,7 @@ public class ScoreMane : MonoBehaviour
         if (other.CompareTag("Goal"))
         {
             Debug.Log("last");
+            audioSource.PlayOneShot(exciting);
             Invoke(nameof(SeceneMove), 2.0f);
         }
     }
