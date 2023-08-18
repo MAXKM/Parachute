@@ -58,7 +58,7 @@ public class PlayerParticle : MonoBehaviour
     {
         yield return new WaitForSeconds(2.25f);
         rb.constraints = RigidbodyConstraints.None;
-        staging = false;
+
         Vector3 force = new Vector3(0.0f, 0.0f, 50.0f);// —Í‚ğİ’è
         rb.AddForce(force, ForceMode.Impulse);// —Í‚ğ‰Á‚¦‚é
         Destroy(p1);
