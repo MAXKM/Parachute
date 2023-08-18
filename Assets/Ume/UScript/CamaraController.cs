@@ -18,6 +18,7 @@ public class CamaraController : MonoBehaviour
     float z = 35.0f;
     void Start()
     {
+        Application.targetFrameRate = 60;
         offset = transform.position - player.transform.position;
         onece = true;
         finish = false;

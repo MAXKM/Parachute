@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public bool play;
     void Start()
     {
+        Application.targetFrameRate = 60;
         play = true;
     }
 

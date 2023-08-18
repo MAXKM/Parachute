@@ -18,6 +18,7 @@ public class PlayerParticle : MonoBehaviour
     GameObject p3;
     void Start()
     {
+        Application.targetFrameRate = 60;
         staging = false;
         onece = true;
         rb = GetComponent<Rigidbody>();
