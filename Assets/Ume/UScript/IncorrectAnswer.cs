@@ -6,9 +6,11 @@ public class IncorrectAnswer : MonoBehaviour
 {
     // Start is called before the first frame update
     public QuizScript quizScript;
+    public ScoreMane scoreMane;
+    public bool hantei;
     void Start()
     {
-        
+        hantei = false;
     }
 
     // Update is called once per frame
@@ -18,9 +20,11 @@ public class IncorrectAnswer : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (quizScript.textArray[quizScript.rand, 1] == "B")
+        if (other.gameObject.CompareTag("Player") && quizScript.textArray[quizScript.rand, 1] == "B")
         {
             Debug.Log("ê≥â");
+            hantei = true;
+            scoreMane.MaruBatu(hantei);
         }
     }
 }

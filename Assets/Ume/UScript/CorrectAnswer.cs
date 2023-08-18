@@ -5,9 +5,11 @@ using UnityEngine;
 public class CorrectAnswer : MonoBehaviour
 {
     public QuizScript quizScript;
+    public ScoreMane scoreMane;
+    public bool hantei;
     void Start()
     {
-        
+        hantei = false;
     }
 
     // Update is called once per frame
@@ -17,9 +19,11 @@ public class CorrectAnswer : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (quizScript.textArray[quizScript.rand,1] == "A")
+        if (other.gameObject.CompareTag("Player") && quizScript.textArray[quizScript.rand,1] == "A")
         {
             Debug.Log("ê≥â");
+            hantei = true;
+            scoreMane.MaruBatu(hantei);
         }
     }
 }
